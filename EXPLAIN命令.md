@@ -10,11 +10,11 @@
 
 ### EXPLAIN中的列
 
-#### id 列
+#### *id 列*
 
 对应查询使用的表和查询顺序
 
-#### select_type 列
+#### *select_type 列*
 
 这一列显示了对应的查询是简单查询还是复杂查询。
 
@@ -25,11 +25,11 @@
 - UNION：在UNION中的第二个和随后的SELECT
 - UNION RESULT：用来从UNION的匿名临时表中查询结果的SELECT
 
-#### table 列
+#### *table 列*
 
 这一列显示对应行正在访问哪个表(表名或别名)
 
-#### type 列
+#### *type 列*
 
 访问类型——MySQL查找表中行的方式。效率从最差到最优：
 
@@ -41,31 +41,31 @@
 - const, system：当MySQL能对查询的某部分优化转换成常量时。例如`SELECT id FROM user WHERE id = 1`
 - NULL：MySQL在优化阶段分解查询语句，在执行阶段不需要访问表或索引。例如，从一个索引列选取最小值可以通过单独查找索引来完成，不需要再执行时访问表。
 
-#### possible_keys 列
+#### *possible_keys 列*
 
 这一列显示了查询可以使用哪些索引，基于查询访问的列和使用的比较操作符来判断
 
-#### key 列
+#### *key 列*
 
 MySQL实际采用的索引
 
-#### key_len 列
+#### *key_len 列*
 
 MySQL在索引里使用的字节数
 
-#### ref 列
+#### *ref 列*
 
 记录了在key列使用的索引查找值缩影的列或常量
 
-#### rows 列
+#### *rows 列*
 
 MySQL估计此次查询需要扫描的行数(并不准确，反映不了LIMIT字句)
 
-#### filtered 列
+#### *filtered 列*
 
 显示WHERE字句或者联接条件的记录数的百分比
 
-#### Extra 列
+#### *Extra 列*
 
 额外信息，常见值如下：
 
